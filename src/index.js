@@ -10,6 +10,7 @@ app.set('port', 3000);
 // routes
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'));
+    
 });
 
 // static files
