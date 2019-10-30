@@ -16,6 +16,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(routes);
 
 // static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // listening the server
 app.listen(app.get('port'), () =>{
