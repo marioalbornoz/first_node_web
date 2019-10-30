@@ -1,20 +1,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const routes = require('./routes/index');
 
 
 // setting
 app.set('port', 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
 
 // middlewares
 
 // routes
-app.get('/', (req,res) => {
-    //res.sendFile(path.join(__dirname, 'views/index.html'));
-    res.render('index', { title: 'First Web node' });
-});
+app.use(routes);
 
 // static files
 
